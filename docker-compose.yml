@@ -1,0 +1,8 @@
+services:
+  github-lines:
+    build:
+      context: .
+    restart: always
+    env_file:
+      - .env
+    command: npm run start-discord
