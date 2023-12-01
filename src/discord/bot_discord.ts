@@ -76,16 +76,19 @@ export class GHLDiscordBot extends SapphireBot.SapphireClient {
       }
     });
 
+    /*
     this.on("ready", () => {
       this?.user?.setActivity("for GitHub links", {
         type: "WATCHING"
       });
     });
+    */
 
     this.on("commandRun", (a, b, msg) => {
       if (this.analytics) this.analytics.send(msg);
     });
 
+    /*
     this.on("guildCreate", (guild) => {
       console.log(`Joined new server ${guild.name}`);
 
@@ -114,6 +117,7 @@ export class GHLDiscordBot extends SapphireBot.SapphireClient {
 
       channel?.send({ embeds: [joinEmbed] });
     });
+    */
 
     console.log("Started Discord bot.");
   }
