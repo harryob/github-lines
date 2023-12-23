@@ -120,6 +120,7 @@ export class Core {
     // file extension for syntax highlighting
     let extension = (filename.includes(".") ? filename.split(".") : [""]).pop(); // .pop returns the last element
     if (!extension || extension.match(/[^0-9a-z]/i)) extension = ""; // alphanumeric extensions only
+    if (extension === "dm") extension = "js"; // Override dm extensions to use javascript highlighting instead
 
     // const message = `\`\`\`${toDisplay.search(/\S/) !== -1 ? extension : " "}\n${toDisplay}\n\`\`\``;
     return new LineData(lineLength, extension, toDisplay);
